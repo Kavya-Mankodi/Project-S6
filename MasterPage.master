@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <!-- Title set from content pages -->
+    <title><asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder></title>
+
+    <!-- Simple Responsive CSS -->
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #CAF1DE;
+            ;
+        }
+        .header {
+            background-color: #3EB489;
+            padding: 12px;
+        }
+        .header a {
+            color: Grey;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .nav {
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            margin: auto;
+            max-width: 960px;
+        }
+        .footer {
+            background-color: #3EB489;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        @media (max-width: 600px) {
+            .header a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header + Navigation -->
+        <div class="header">
+            <div class="nav">
+                <a href="Default.aspx">Home</a>
+                <a href="Feedback.aspx">Submit Feedback</a>
+                <a href="ViewFeedbacks.aspx">Admin List</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2026 Online Feedback System
+        </div>
+    </form>
+</body>
+</html>
