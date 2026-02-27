@@ -15,6 +15,7 @@
             text-align: center;
             margin-bottom: 18px;
             color: Blue;
+            font-family:@MS PGothic;
         }
         .form-container label {
             display: block;
@@ -66,7 +67,7 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="form-container">
-        <h2 id="h2">Submit Your Feedback</h2>
+       <center> <h2 id="h2">Submit Your Feedback</h2></center>
         <center>
         <table class="form-table">
             <tr>

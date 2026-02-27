@@ -1,28 +1,29 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <!-- Title set from content pages -->
-    <title><asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder></title>
 
-    <!-- Simple Responsive CSS -->
+    <!-- Use the Title attribute of content pages -->
+    <title><asp:Literal ID="Literal1" runat="server" Text='<%# Page.Title %>' /></title>
+
+    <!-- This placeholder is *solely for page-specific CSS / scripts / meta tags -->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Global site-wide CSS in master page -->
     <style type="text/css">
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #CAF1DE;
-            ;
         }
         .header {
             background-color: #3EB489;
             padding: 12px;
         }
         .header a {
-            color: Grey;
+            color: Blue;
             text-decoration: none;
             margin-right: 15px;
             font-weight: bold;
@@ -32,6 +33,7 @@
         }
         .nav {
             text-align: center;
+            color: Blue;
         }
         .container {
             padding: 20px;
@@ -52,24 +54,22 @@
             }
         }
     </style>
+
 </head>
 <body>
-    <form id="form1" runat="server">
-        <!-- Header + Navigation -->
+    <form id="Form1" runat="server">
         <div class="header">
             <div class="nav">
-                <a href="Default.aspx">Home</a>
+                <a href="Home.aspx">Home</a>
                 <a href="Feedback.aspx">Submit Feedback</a>
-                <a href="ViewFeedbacks.aspx">Admin List</a>
+                <a href="ViewFeedbacks.aspx">View Feedback</a>
             </div>
         </div>
 
-        <!-- Main Content -->
         <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             &copy; 2026 Online Feedback System
         </div>
